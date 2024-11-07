@@ -45,9 +45,8 @@ class OpAdmission(models.Model):
         'res.partner.title', 'Title')
     application_number = fields.Char(
         'Application Number', size=16, copy=False,
-        required=True, readonly=True, store=True,
-        default=lambda self:
-        self.env['ir.sequence'].next_by_code('op.admission'))
+        required=True, readonly=True, store=True
+        )
     admission_date = fields.Date(
         'Admission Date', copy=False)
     application_date = fields.Datetime(
@@ -460,6 +459,20 @@ class OpAdmission(models.Model):
             'label': _('Import Template for Admission'),
             'template': '/openeducat_admission/static/xls/op_admission.xls'
         }]
+
+    @api.model_create_multi
+    def create(self, vals_list):
+        for vals in vals_list:
+            register = self.env['op.admission.register'].browse(vals.get('register_id'))
+            birth_date = fields.Date.from_string(vals.get('birth_date'))
+            today_date = fields.Date.today()
+            day = (today_date - birth_date).days
+            years = day // 365
+            if  birth_date < fields.Date.today() and  years > register.minimum_age_criteria:
+                if vals.get('application_number', '/') == '/':
+                    vals['application_number'] = self.env['ir.sequence'].next_by_code(
+                        'op.admission') or '/'
+        return super(OpAdmission, self).create(vals_list)
 
 
 class OpStudentCourseInherit(models.Model):

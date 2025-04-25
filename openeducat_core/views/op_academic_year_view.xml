@@ -24,7 +24,7 @@
                 <form string="Academic Year">
                     <header>
                         <field name="create_boolean" invisible="1"/>
-                       
+
                         <button name="term_create" type="object" string="Create Terms" class="oe_highlight"
                                 invisible = "create_boolean != False or term_structure == 'others'"/>
                     </header>

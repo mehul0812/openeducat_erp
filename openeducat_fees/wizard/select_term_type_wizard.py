@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 ###############################################################################
 #
 #    OpenEduCat Inc
@@ -20,7 +19,7 @@
 ###############################################################################
 
 
-from odoo import models, fields, api
+from odoo import fields, models
 
 
 class SelectFeesTermTypeWizard(models.TransientModel):

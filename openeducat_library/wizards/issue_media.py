@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 ###############################################################################
 #
 #    OpenEduCat Inc
@@ -20,11 +19,10 @@
 ###############################################################################
 
 from datetime import datetime
-from dateutil.relativedelta import relativedelta
-from odoo import models, fields, api, _
-from odoo.exceptions import UserError, ValidationError
 
-from ..models import media_unit
+from dateutil.relativedelta import relativedelta
+from odoo import _, api, fields, models
+from odoo.exceptions import UserError, ValidationError
 
 
 class IssueMedia(models.TransientModel):

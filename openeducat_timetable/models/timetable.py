@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 ###############################################################################
 #
 #    OpenEduCat Inc
@@ -20,9 +19,10 @@
 ###############################################################################
 
 import calendar
-from odoo import models, fields, api, _
-from odoo.exceptions import ValidationError
+
 import pytz
+from odoo import _, api, fields, models
+from odoo.exceptions import ValidationError
 
 week_days = [(calendar.day_name[0], (calendar.day_name[0])),
              (calendar.day_name[1], (calendar.day_name[1])),

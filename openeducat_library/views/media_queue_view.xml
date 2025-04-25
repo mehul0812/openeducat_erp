@@ -28,7 +28,7 @@
                                 invisible="state != 'request'" class="oe_highlight"
                                 groups="openeducat_library.group_op_library"/>
                         <button name="do_reject" string="Reject" type="object"
-                                invisible="state not in ('request','accept')"                                
+                                invisible="state not in ('request','accept')"
                                 groups="openeducat_library.group_op_library"/>
                         <button name="do_request_again" string="Request Again"
                         invisible="state != 'reject'" type="object"

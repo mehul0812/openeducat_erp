@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 ###############################################################################
 #
 #    OpenEduCat Inc
@@ -19,8 +18,7 @@
 #
 ###############################################################################
 
-from odoo import models, fields, api, _
-from odoo.exceptions import ValidationError
+from odoo import fields, models
 
 
 class OpProgram(models.Model):

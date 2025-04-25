@@ -29,6 +29,6 @@
             <field name="implied_ids"
                    eval="[(4, ref('openeducat_facility.group_op_facility_user'))]"/>
         </record>
-        
+
     </data>
 </odoo>
